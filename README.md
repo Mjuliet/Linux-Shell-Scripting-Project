@@ -217,6 +217,14 @@ This capstone project presents a comprehensive development of a flexible and int
 
 ## TROUBLESHOOTING
 
+These are some of the challenges I faced while I was working on the project and how I managed to resolve them. You may or may not encounter them, but do well to take note of them as it might help you navigate through errors or challenges in the future.
+
+- I encountered a syntax error severally while testing out my script because I did not add an ```fi``` statement to close the ```if``` block.
+
+- Make sure to pay attention to little details like spacing as the wrong spacing can cause give out error in your script.
+
+- Always test your script while you are still developing the code. This will help you know if it is running efficiently and also save you time.
+
 
 
 
