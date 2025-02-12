@@ -4,29 +4,38 @@ echo
 
 echo "Math made easy! Our mini calculator is at your service"
 
-# Prompt the user to enter a number for the multiplication table
+
 echo
+# Main loop to contineously prompt user for input
 while true
 do
+
+
+# Prompt user to enter a number
     read -p "Enter a number: " user_number
     echo
 
 
-# Ask if they want a full table or a partial table
+
+# Prompt user to choose between full and partial multiplication table
 
     read -p "Do you want a full multiplication table (1-10) or a partial table? Enter 'f' for full table or 'p' for partial table: " table_type
     echo
 
 
-     # Ask the user if they want to see the table in ascending or descending order
+      # Check if user choose full multiplication table
 
     if [ "$table_type" = "f" ]; then
+
+
+      # Prompt user to choose between ascending and descending order
+
         read -p "Do you want your table in ascending or descending order? Enter 'a' for ascending order or 'd' for descending order: " order_type
 	echo
 
-        if [ "$order_type" = "a" ]; then
+	  # Generate full multiplication table in ascending order
 
-# Full table in ascending order using the list form
+        if [ "$order_type" = "a" ]; then
 
             echo "Multiplication Table for $user_number in ascending order (1-10) using for loop:"
             for i in {1..10}; do
@@ -35,7 +44,8 @@ do
             done
             echo
 
-# Full table in ascending order using C-style for loop
+
+          # Generate full multiplication table in descending order
 
 
 	     echo "Multiplication Table for $user_number in ascending order (1-10) using C-style for loop:"
@@ -68,18 +78,20 @@ do
         fi
 
 
-# Partial multiplication table
+       # Check if user chose partial multiplication table
 
 	  elif [ "$table_type" = "p" ]; then
 
-# If partial, prompt for the start and end numbers of the range
 
+         # Prompt user to enter start and end numbers for partial table
+ 
         read -p "Enter the starting number for the partial table (1-10): " start
 	echo
         read -p "Enter the ending number for the partial table (1-10): " end
 
 
-# In case of invalid range, full table will be generated
+          # Validate user input for start and end numbers
+
 
         if [ $start -lt 1 ] || [ $start -gt 10 ] || [ $end -lt 1 ] || [ $end -gt 10 ] || [ $start -gt $end ]; then
             echo
@@ -90,10 +102,13 @@ do
                 echo "$user_number x $i = $product"
             done
         else
+
+
+	  # Prompt user to choose between ascending and descending order for partial table
             read -p "Do you want your table in ascending or descending order? Enter 'a' for ascending order or 'd' for descending order: " order_type
 
 
-# Partial multiplication table in ascending order using the list form and C-style for loops.
+          # Generate partial multiplication table in ascending order
 
             if [ "$order_type" = "a" ]; then
                 echo "Multiplication Table for $user_number ($start-$end) using for loop:"
@@ -112,7 +127,8 @@ do
                 echo
 
 
-# partial multiplication table in descending order using the list form and C-style for loops.
+           # Generate partial multiplication table in descending order
+
 
             elif [ "$order_type" = "d" ]; then
                 echo "Multiplication Table for $user_number ($start-$end) using for loop:"
@@ -131,6 +147,9 @@ do
             fi
         fi
     fi
+
+
+
 
 
 # Asking the user if they want to generate another multiplication table.
